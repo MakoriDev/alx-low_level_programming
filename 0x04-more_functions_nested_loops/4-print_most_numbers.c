@@ -1,12 +1,23 @@
 #include "main.h"
 
 /**
-   * main - check the code for Holberton School students.
-    *
-     * Return: Always 0.
-      */
-int main(void)
+ * print_most_numbers -  checks for checks for a digit (0 through 9).
+ *
+ * Return: Always 0.
+ */
+void print_most_numbers(void)
 {
-	    print_most_numbers();
-	        return (0);
+	int a;
+
+	for (a = 48; a < 58; a++)
+	{
+		if (a != 50)
+		{
+			if (a != 52)
+			{
+			_putchar(a);
+			}
+		}
+	}
+	_putchar('\n');
 }
