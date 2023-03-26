@@ -1,12 +1,23 @@
 #include "main.h"
 
 /**
-   * main - check the code for Holberton School students.
-    *
-     * Return: Always 0.
-      */
-int main(void)
+ * more_numbers -  checks for checks for a digit (0 through 9).
+ * Return: Always 0.
+ */
+void more_numbers(void)
 {
-	    more_numbers();
-	        return (0);
+	int a, b;
+
+	for (a = 0; a < 10; a++)
+	{
+		for (b = 0; b < 15; b++)
+		{
+			if (b / 10 != 0)
+			{
+				_putchar(b / 10 + '0');
+			}
+			_putchar(b % 10 + '0');
+		}
+		_putchar('\n');
+	}
 }
