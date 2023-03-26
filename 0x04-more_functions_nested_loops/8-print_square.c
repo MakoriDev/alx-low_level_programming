@@ -1,14 +1,27 @@
 #include "main.h"
 
 /**
-   * main - check the code for Holberton School students.
-    *
-     * Return: Always 0.
-      */
-int main(void)
+ * print_square -  checks for checks for a digit (0 through 9).
+ * @size: size -  Variable
+ * Return: Always 0.
+ */
+void print_square(int size)
 {
-	    print_square(2);
-	        print_square(10);
-		    print_square(0);
-		        return (0);
+	int x, y;
+
+	if (size > 0)
+	{
+		for (x = 1; x <= size; x++)
+		{
+			for (y = 1; y <= size; y++)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
+		}
+	}
+	else
+	{
+		_putchar('\n');
+	}
 }

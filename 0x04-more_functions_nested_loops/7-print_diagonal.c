@@ -1,15 +1,33 @@
 #include "main.h"
 
 /**
-   * main - check the code for Holberton School students.
-    *
-     * Return: Always 0.
-      */
-int main(void)
+ * print_diagonal -  checks for checks for a digit (0 through 9).
+ * @n: n -  Variable
+ *
+ * Return: Always 0.
+ */
+void print_diagonal(int n)
 {
-	    print_diagonal(0);
-	        print_diagonal(2);
-		    print_diagonal(10);
-		        print_diagonal(-4);
-			    return (0);
+	int x, y;
+
+	if (n > 0)
+	{
+		for (x = 1; x <= n; x++)
+		{
+			for (y = 1; y <= n; y++)
+			{
+				if (x == y)
+				{
+					_putchar(92);
+					break;
+				}
+				_putchar(' ');
+			}
+			_putchar('\n');
+		}
+	}
+	else
+	{
+		_putchar('\n');
+	}
 }
