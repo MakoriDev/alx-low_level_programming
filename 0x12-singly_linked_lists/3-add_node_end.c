@@ -1,41 +1,52 @@
-/*
- * File: 3-add_nodeint_end.c
- * Auth: Makori
- */
-
+#include <stdlib.h>
+#include <string.h>
 #include "lists.h"
 
 /**
- * add_nodeint_end - Adds a new node at the
- *                   end of a listint_t list.
- * @head: A pointer to the address of the
- *        head of the listint_t list.
- * @n: The integer for the new node to contain.
- *
- * Return: If the function fails - NULL.
- *         Otherwise - the address of the new element.
+ * add_node_end - function that adds a new node at the end of a list_t list
+ * @head: Const double pointer of structure list_t for beginning
+ * @str: Const char pointer for data to be added
+ * Return: List with new node for list_t list, NULL if failed
  */
-listint_t *add_nodeint_end(listint_t **head, const int n)
-{
-	listint_t *new, *last;
 
-	new = malloc(sizeof(listint_t));
+list_t *add_node_end(list_t **head, const char *str)
+{
+
+	unsigned int i;
+	list_t *new;
+	list_t *temp;
+
+	new  = malloc(sizeof(list_t));
+
+	if (str == NULL)
+		return (NULL);
+
 	if (new == NULL)
 		return (NULL);
 
-	new->n = n;
-	new->next = NULL;
+	for (i = 0; str[i]; i++)
+		;
 
 	if (*head == NULL)
-		*head = new;
-
-	else
 	{
-		last = *head;
-		while (last->next != NULL)
-			last = last->next;
-		last->next = new;
+		*head = new;
+		new->len = i;
+		new->str = strdup(str);
+		new->next = NULL;
+		return (new);
 	}
 
-	return (*head);
+	temp = *head;
+
+	while (temp->next != NULL)
+		temp = temp->next;
+
+	temp->next = new;
+
+	new->len = i;
+	new->str = strdup(str);
+	new->next = NULL;
+
+	return (new);
+
 }
