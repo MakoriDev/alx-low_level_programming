@@ -1,9 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
-  * _isdigit - tells if the string consists of digits
-  * @argv: pointer to current item in argument
-  * Return: return 0 if all digits, 1 if not all digits.
   */
 int _isdigit(char *argv)
 {
@@ -41,10 +38,7 @@ int _atoi(char *s)
 	return (result);
 }
 /**
-  * main - main function call
-  * @argc: argument count
-  * @argv: 2D array of arguments
-  * Return: return 0 on success, 98 on failure
+  * 
   */
 int main(int argc, char *argv[])
 {
